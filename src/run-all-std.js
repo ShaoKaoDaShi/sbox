@@ -3,13 +3,15 @@ import path from "node:path";
 import { exec } from "child_process";
 
 const APPS_DIR = "/Users/bytedance/projects/zijie/aidp-foundation/apps";
+const cwd = process.cwd();
 
 // 查找所有 std 项目
 const findStdProjects = (dir) => {
+  const appsDir = path.join(dir, "apps");
   return fs
-    .readdirSync(dir)
-    .filter((file) => file.includes("std"))
-    .map((file) => path.join(dir, file))
+    .readdirSync(appsDir)
+    .filter((file) => file.endsWith("-std") || file === "foundation")
+    .map((file) => path.join(appsDir, file))
     .filter((filePath) => {
       try {
         return fs.statSync(filePath).isDirectory();
@@ -21,25 +23,30 @@ const findStdProjects = (dir) => {
 };
 
 const main = () => {
-  const projects = findStdProjects(APPS_DIR);
+  try {
+    const projects = findStdProjects(cwd);
 
-  console.log("Found std projects:", projects);
+    console.log("Found std projects:", projects);
 
-  // 启动每个项目
-  projects.forEach((project) => {
-    console.log(`Starting ${project}...`);
-    exec("pnpm run dev", { cwd: project }, (error, stdout, stderr) => {
-      if (error) {
-        console.error(`Error starting ${project}: ${error.message}`);
-        return;
-      }
-      if (stderr) {
-        console.error(`stderr: ${stderr}`);
-        return;
-      }
-      console.log(`stdout: ${stdout}`);
+    // 启动每个项目
+    projects.forEach((project) => {
+      console.log(`Starting ${project}...`);
+      exec("pnpm run dev", { cwd: project }, (error, stdout, stderr) => {
+        if (error) {
+          console.error(`Error starting ${project}: ${error.message}`);
+          return;
+        }
+        if (stderr) {
+          console.error(`stderr: ${stderr}`);
+          return;
+        }
+        console.log(`stdout: ${stdout}`);
+      });
     });
-  });
+  } catch (err) {
+    console.error("Fatal error:", err);
+    process.exit(1);
+  }
 };
 
 export default main;
