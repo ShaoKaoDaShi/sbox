@@ -11,14 +11,18 @@ program
   .action((projectName) => {
     console.log(`正在创建项目: ${projectName}`);
     // 这里可以加入下载模板或生成文件等逻辑
-  })
+  });
+
+program
   .command("run-all-std")
   .description("运行所有 std 项目")
   .action(() => {
     console.log("正在运行所有 std 项目...");
     runAllStd();
     // 这里可以加入运行所有 std 项目的逻辑
-  })
+  });
+
+program
   .command("rm-all-node_modules")
   .description("删除所有项目中的 node_modules 目录")
   .action(() => {
