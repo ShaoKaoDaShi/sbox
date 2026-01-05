@@ -18,7 +18,12 @@
     "url": "https://github.com/ShaoKaoDaShi/sbox/issues"
   },
   "homepage": "https://github.com/ShaoKaoDaShi/sbox#readme",
-  "keywords": [],
+  "keywords": [
+    "shell",
+    "scripts",
+    "skds",
+    "toolbox"
+  ],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.11.0",
