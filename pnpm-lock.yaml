@@ -20,6 +20,9 @@ importers:
       ora:
         specifier: ^9.0.0
         version: 9.0.0
+      zx:
+        specifier: ^8.8.5
+        version: 8.8.5
 
 packages:
 
@@ -281,6 +284,11 @@ packages:
     resolution: {integrity: sha512-CzhO+pFNo8ajLM2d2IW/R93ipy99LWjtwblvC1RsoSUMZgyLbYFr221TnSNT7GjGdYui6P459mw9JH/g/zW2ug==}
     engines: {node: '>=18'}
 
+  zx@8.8.5:
+    resolution: {integrity: sha512-SNgDF5L0gfN7FwVOdEFguY3orU5AkfFZm9B5YSHog/UDHv+lvmd82ZAsOenOkQixigwH2+yyH198AwNdKhj+RA==}
+    engines: {node: '>= 12.17.0'}
+    hasBin: true
+
 snapshots:
 
   '@inquirer/ansi@2.0.2': {}
@@ -480,3 +488,5 @@ snapshots:
       strip-ansi: 7.1.2
 
   yoctocolors@2.1.2: {}
+
+  zx@8.8.5: {}

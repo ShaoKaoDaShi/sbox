@@ -2,6 +2,7 @@
 import { program } from "commander";
 import runAllStd from "../src/run-all-std.js";
 import rmAllNodeModules from "../src/rm-all-node_modules.js";
+import stopAllPnpmDev from "../src/stop-all-pnpm-dev.js";
 
 program
   .version("1.0.0")
@@ -29,6 +30,15 @@ program
     console.log("正在删除所有项目中的 node_modules 目录...");
     rmAllNodeModules();
     // 这里可以加入删除所有项目中的 node_modules 目录的逻辑
+  });
+
+program
+  .command("stop-all-pnpm-dev")
+  .description("停止所有正在运行的 pnpm dev 进程")
+  .action(() => {
+    console.log("正在停止所有正在运行的 pnpm dev 进程...");
+    stopAllPnpmDev();
+    // 这里可以加入停止所有正在运行的 pnpm dev 进程的逻辑
   });
 
 program.parse(process.argv); // 解析命令行参数
