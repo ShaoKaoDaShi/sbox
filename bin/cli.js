@@ -6,7 +6,7 @@ import stopAllPnpmDev from "../src/stop-all-pnpm-dev.js";
 
 program
   .version("1.0.0")
-  .description("一个简单的 CLI 工具")
+  .description("sbox - 你的Shell脚本效率工具箱")
   .command("create <project-name>") // 定义一个子命令
   .description("创建新项目")
   .action((projectName) => {
