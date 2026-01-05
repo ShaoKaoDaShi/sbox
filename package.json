@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "my-cli": "./bin/cli.js"
+    "sbox": "./bin/cli.js"
   },
   "keywords": [],
   "author": "",
