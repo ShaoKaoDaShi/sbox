@@ -2,12 +2,12 @@ import fs from "node:fs";
 import path from "node:path";
 import { exec } from "child_process";
 
-const APPS_DIR = "/Users/bytedance/projects/zijie/aidp-foundation/apps";
+const APPS_DIR = "apps";
 const cwd = process.cwd();
 
 // 查找所有 std 项目
 const findStdProjects = (dir) => {
-  const appsDir = path.join(dir, "apps");
+  const appsDir = path.join(dir, APPS_DIR);
   return fs
     .readdirSync(appsDir)
     .filter((file) => file.endsWith("-std") || file === "foundation")
