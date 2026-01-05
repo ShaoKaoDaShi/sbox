@@ -10,6 +10,14 @@
   "bin": {
     "sbox": "bin/cli.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+git@github.com:ShaoKaoDaShi/sbox.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ShaoKaoDaShi/sbox/issues"
+  },
+  "homepage": "https://github.com/ShaoKaoDaShi/sbox#readme",
   "keywords": [],
   "author": "",
   "license": "ISC",
